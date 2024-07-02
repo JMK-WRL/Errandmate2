@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { signup } from '../redux/actions/authActions';
+import { updateProfile } from '../redux/actions/userActions';
 import { Button, TextField, Container, Typography } from '@material-ui/core';
 
-const Signup = () => {
+const Profile = () => {
     const dispatch = useDispatch();
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        password: ''
-    });
+    const user = useSelector(state => state.user);
 
-    const { loading, error } = useSelector(state => state.auth);
+    const [formData, setFormData] = useState({
+        name: user.name || '',
+        email: user.email || ''
+    });
 
     const handleChange = (e) => {
         setFormData({
@@ -22,13 +21,12 @@ const Signup = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(signup(formData));
+        dispatch(updateProfile(formData));
     };
 
     return (
         <Container>
-            <Typography variant="h4" gutterBottom>Signup</Typography>
-            {error && <Typography color="error">{error}</Typography>}
+            <Typography variant="h4" gutterBottom>Profile</Typography>
             <form onSubmit={handleSubmit}>
                 <TextField
                     name="name"
@@ -49,22 +47,12 @@ const Signup = () => {
                     margin="normal"
                     required
                 />
-                <TextField
-                    name="password"
-                    label="Password"
-                    type="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    fullWidth
-                    margin="normal"
-                    required
-                />
-                <Button type="submit" variant="contained" color="primary" disabled={loading}>
-                    {loading ? 'Signing Up...' : 'Signup'}
+                <Button type="submit" variant="contained" color="primary">
+                    Update Profile
                 </Button>
             </form>
         </Container>
     );
 };
 
-export default Signup;
+export default Profile;

@@ -1,27 +1,31 @@
+import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } from '../actions/authActions';
+
 const initialState = {
     loading: false,
-    user: {},
+    user: null,
     error: ''
 };
 
-const userReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'UPDATE_PROFILE_REQUEST':
+        case SIGNUP_REQUEST:
             return {
                 ...state,
-                loading: true
+                loading: true,
+                error: ''
             };
-        case 'UPDATE_PROFILE_SUCCESS':
+        case SIGNUP_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 user: action.payload,
                 error: ''
             };
-        case 'UPDATE_PROFILE_FAILURE':
+        case SIGNUP_FAILURE:
             return {
                 ...state,
                 loading: false,
+                user: null,
                 error: action.payload
             };
         default:
@@ -29,4 +33,4 @@ const userReducer = (state = initialState, action) => {
     }
 };
 
-export default userReducer;
+export default authReducer;
