@@ -1,0 +1,15 @@
+/* src/components/Navbar.css */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #124e66;
+    height: 64px;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: space-around;
+}

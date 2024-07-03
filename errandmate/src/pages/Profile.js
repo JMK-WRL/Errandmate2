@@ -1,58 +1,67 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateProfile } from '../redux/actions/userActions';
-import { Button, TextField, Container, Typography } from '@material-ui/core';
+import { TextField, Button, Container, Typography, makeStyles } from '@material-ui/core';
 
-const Profile = () => {
-    const dispatch = useDispatch();
-    const user = useSelector(state => state.user);
+const useStyles = makeStyles((theme) => ({
+    formContainer: {
+        marginTop: theme.spacing(4),
+        padding: theme.spacing(4),
+        backgroundColor: '#fff',
+        borderRadius: theme.spacing(1),
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    },
+    formTitle: {
+        marginBottom: theme.spacing(2),
+    },
+    formField: {
+        marginBottom: theme.spacing(2),
+    },
+}));
+
+function ProfileForm() {
+    const classes = useStyles();
 
     const [formData, setFormData] = useState({
-        name: user.name || '',
-        email: user.email || ''
+        bio: '',
+        location: '',
     });
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
+    const { bio, location } = formData;
 
-    const handleSubmit = (e) => {
+    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    const onSubmit = async e => {
         e.preventDefault();
-        dispatch(updateProfile(formData));
+        // Handle profile update
     };
 
     return (
-        <Container>
-            <Typography variant="h4" gutterBottom>Profile</Typography>
-            <form onSubmit={handleSubmit}>
+        <Container maxWidth="sm" className={classes.formContainer}>
+            <Typography variant="h4" className={classes.formTitle}>Edit Profile</Typography>
+            <form onSubmit={onSubmit}>
                 <TextField
-                    name="name"
-                    label="Name"
-                    value={formData.name}
-                    onChange={handleChange}
+                    label="Bio"
+                    name="bio"
+                    value={bio}
+                    onChange={onChange}
                     fullWidth
-                    margin="normal"
-                    required
+                    variant="outlined"
+                    className={classes.formField}
                 />
                 <TextField
-                    name="email"
-                    label="Email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    label="Location"
+                    name="location"
+                    value={location}
+                    onChange={onChange}
                     fullWidth
-                    margin="normal"
-                    required
+                    variant="outlined"
+                    className={classes.formField}
                 />
                 <Button type="submit" variant="contained" color="primary">
-                    Update Profile
+                    Save
                 </Button>
             </form>
         </Container>
     );
-};
+}
 
-export default Profile;
+export default ProfileForm;

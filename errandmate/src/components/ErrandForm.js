@@ -1,7 +1,25 @@
 import React, { useState } from 'react';
-import { TextField, Button, Container, Typography, MenuItem } from '@material-ui/core';
+import { TextField, Button, Container, Typography, MenuItem, makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+    formContainer: {
+        marginTop: theme.spacing(4),
+        padding: theme.spacing(4),
+        backgroundColor: '#fff',
+        borderRadius: theme.spacing(1),
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    },
+    formTitle: {
+        marginBottom: theme.spacing(2),
+    },
+    formField: {
+        marginBottom: theme.spacing(2),
+    },
+}));
 
 function ErrandForm() {
+    const classes = useStyles();
+
     const [formData, setFormData] = useState({
         description: '',
         category: '',
@@ -20,8 +38,8 @@ function ErrandForm() {
     };
 
     return (
-        <Container>
-            <Typography variant="h4">Post an Errand</Typography>
+        <Container maxWidth="sm" className={classes.formContainer}>
+            <Typography variant="h4" className={classes.formTitle}>Post an Errand</Typography>
             <form onSubmit={onSubmit}>
                 <TextField
                     label="Description"
@@ -29,7 +47,8 @@ function ErrandForm() {
                     value={description}
                     onChange={onChange}
                     fullWidth
-                    margin="normal"
+                    variant="outlined"
+                    className={classes.formField}
                 />
                 <TextField
                     label="Category"
@@ -38,7 +57,8 @@ function ErrandForm() {
                     onChange={onChange}
                     select
                     fullWidth
-                    margin="normal"
+                    variant="outlined"
+                    className={classes.formField}
                 >
                     <MenuItem value="groceries">Groceries</MenuItem>
                     <MenuItem value="pharmacy">Pharmacy</MenuItem>
@@ -51,7 +71,8 @@ function ErrandForm() {
                     value={location}
                     onChange={onChange}
                     fullWidth
-                    margin="normal"
+                    variant="outlined"
+                    className={classes.formField}
                 />
                 <TextField
                     label="Deadline"
@@ -60,7 +81,8 @@ function ErrandForm() {
                     value={deadline}
                     onChange={onChange}
                     fullWidth
-                    margin="normal"
+                    variant="outlined"
+                    className={classes.formField}
                     InputLabelProps={{
                         shrink: true,
                     }}
@@ -71,9 +93,10 @@ function ErrandForm() {
                     value={instructions}
                     onChange={onChange}
                     fullWidth
-                    margin="normal"
+                    variant="outlined"
+                    className={classes.formField}
                 />
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" color="primary" className={classes.formField}>
                     Post
                 </Button>
             </form>
