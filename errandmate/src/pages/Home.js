@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     sectionTitle: {
         marginBottom: theme.spacing(4),
         textAlign: 'center',
+
     },
     featureItem: {
         padding: theme.spacing(4),
@@ -60,7 +61,6 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(2),
     },
     footer: {
-        //backgroundColor: '#1b1b1b',
         color: '#fff',
         padding: theme.spacing(6),
         marginTop: theme.spacing(8),
@@ -86,7 +86,7 @@ const Home = () => {
                     Welcome to ErrandMate
                 </Typography>
                 <Typography variant="h5" className={classes.heroSubtitle}>
-                    Your go-to solution for managing errands efficiently.
+                    Connecting Communities One Errand at a time.
                 </Typography>
                 <Button variant="contained" color="primary" component={Link} to="./signup" className={classes.heroButton}>
                     Get Started

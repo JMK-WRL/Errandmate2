@@ -106,3 +106,31 @@
     color: #FFA500;
     /* Accent color on link hover */
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 32px;
+    }
+
+    .hero-title,
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .hero-button {
+        font-size: 1rem;
+    }
+
+    .feature-item {
+        padding: 16px;
+    }
+
+    .testimonial-section {
+        padding: 32px;
+    }
+
+    .footer {
+        padding: 24px;
+    }
+}

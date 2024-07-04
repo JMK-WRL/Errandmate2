@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #000;
+    background-color: #124e66;
     /* background-image: url(./images/Simplify-Grocery-Shopping-_-Live-Better_.jpg); */
 }
 
@@ -24,4 +24,11 @@ main {
     flex: 1;
     padding: 20px;
     padding-top: 84px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
 }
