@@ -3,8 +3,8 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #124E66;
-    background-image: url(./images/Simplify-Grocery-Shopping-_-Live-Better_.jpg);
+    background-color: #000;
+    /* background-image: url(./images/Simplify-Grocery-Shopping-_-Live-Better_.jpg); */
 }
 
 #root {

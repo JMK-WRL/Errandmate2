@@ -6,7 +6,7 @@ import './Navbar.css';
 
 function Navbar() {
     return (
-        <AppBar position="static" className="navbar">
+        <AppBar position="static" className="navbar" color='#124E66'>
             <Toolbar>
                 <Typography variant="h6" style={{ flexGrow: 1 }}>
                     <Button color="inherit" component={Link} to="/">ErrandMate</Button>
