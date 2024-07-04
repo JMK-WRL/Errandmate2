@@ -36,7 +36,7 @@ function ProfileForm() {
 
     return (
         <Container maxWidth="sm" className={classes.formContainer}>
-            <Typography variant="h4" className={classes.formTitle}>Edit Profile</Typography>
+            <h1>Edit Profile</h1>
             <form onSubmit={onSubmit}>
                 <TextField
                     label="Bio"
