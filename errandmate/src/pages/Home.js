@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(8),
         borderRadius: theme.spacing(1),
         color: '#fff',
-
     },
     heroTitle: {
         fontWeight: 'bold',
@@ -26,17 +25,15 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         backgroundColor: '#1F7891',
         '&:hover': {
-            backgroundColor: "F18C8E",
+            backgroundColor: '#F18C8E',
         },
     },
-
     section: {
         marginTop: theme.spacing(8),
     },
     sectionTitle: {
         marginBottom: theme.spacing(4),
         textAlign: 'center',
-
     },
     featureItem: {
         padding: theme.spacing(4),
@@ -86,9 +83,9 @@ const Home = () => {
                     Welcome to ErrandMate
                 </Typography>
                 <Typography variant="h5" className={classes.heroSubtitle}>
-                    Connecting Communities One Errand at a time.
+                    Connecting You to Trusted Errand Masters
                 </Typography>
-                <Button variant="contained" color="primary" component={Link} to="./signup" className={classes.heroButton}>
+                <Button variant="contained" color="primary" component={Link} to="/signup" className={classes.heroButton}>
                     Get Started
                 </Button>
             </Box>
@@ -101,22 +98,22 @@ const Home = () => {
                     <Grid item xs={12} sm={4}>
                         <Paper className={`${classes.featureItem} ${classes.featureItemHover}`}>
                             <EmojiObjects fontSize="large" />
-                            <Typography variant="h6">Innovative Solutions</Typography>
-                            <Typography>We provide creative solutions to manage your errands efficiently.</Typography>
+                            <Typography variant="h6">Innovative Errand Solutions</Typography>
+                            <Typography>Efficiently manage your errands with our innovative solutions.</Typography>
                         </Paper>
                     </Grid>
                     <Grid item xs={12} sm={4}>
                         <Paper className={`${classes.featureItem} ${classes.featureItemHover}`}>
                             <Build fontSize="large" />
-                            <Typography variant="h6">Professional Services</Typography>
-                            <Typography>Our team ensures high-quality and professional services.</Typography>
+                            <Typography variant="h6">Professional Errand Masters</Typography>
+                            <Typography>Our errand masters provide high-quality, professional services.</Typography>
                         </Paper>
                     </Grid>
                     <Grid item xs={12} sm={4}>
                         <Paper className={`${classes.featureItem} ${classes.featureItemHover}`}>
                             <People fontSize="large" />
-                            <Typography variant="h6">Customer Support</Typography>
-                            <Typography>We provide 24/7 customer support to help you with your needs.</Typography>
+                            <Typography variant="h6">24/7 Customer Support</Typography>
+                            <Typography>We offer round-the-clock support to assist you with your errands.</Typography>
                         </Paper>
                     </Grid>
                 </Grid>
@@ -128,14 +125,15 @@ const Home = () => {
                 </Typography>
                 <Typography className={classes.testimonial}>"ErrandMate has made my life so much easier!" - Jane Doe</Typography>
                 <Typography className={classes.testimonial}>"I love the innovative solutions they offer!" - John Smith</Typography>
+                <Typography className={classes.testimonial}>"The errand masters are professional and reliable!" - Sarah Lee</Typography>
             </Box>
 
             <Box className={classes.footer}>
                 <Typography variant="h6" align="center" gutterBottom>
                     ErrandMate
                 </Typography>
-                <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-                    Making your life easier, one errand at a time.
+                <Typography variant="subtitle1" align="center" color="#000" component="p">
+                    Simplifying your errands, one task at a time.
                 </Typography>
                 <Typography variant="body2" align="center">
                     <Link to="/contact" className={classes.footerLink}>Contact Us</Link>

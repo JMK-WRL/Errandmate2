@@ -13,7 +13,7 @@ function Navbar() {
     };
 
     return (
-        <AppBar position="fixed" className="navbar">
+        <AppBar position="fixed" className="navbar" color='#fff'>
             <Toolbar>
                 <Typography variant="h6" style={{ flexGrow: 1 }}>
                     <Button color="inherit" component={Link} to="/">ErrandMate</Button>
