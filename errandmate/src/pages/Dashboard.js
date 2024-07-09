@@ -14,7 +14,7 @@ const Dashboard = () => {
 
     return (
         <Container>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h4" gutterBottom color='#000'>
                 Dashboard
             </Typography>
             {loading && <CircularProgress />}
