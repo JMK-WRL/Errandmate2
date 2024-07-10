@@ -22,7 +22,7 @@ function Navbar() {
                     <Button color="inherit" component={Link} to="/">Home</Button>
                     <Button color="inherit" component={Link} to="/signup">Signup</Button>
                     <Button color="inherit" component={Link} to="/profile">Profile</Button>
-                    <Button color="inherit" component={Link} to="/dashboard">Dashboard</Button>
+
                     <Button color="inherit" component={Link} to="/post-errand">Post Errand</Button>
                 </div>
                 <IconButton edge="start" className="navbar-toggle" color="inherit" aria-label="menu" onClick={toggleNavbar}>
